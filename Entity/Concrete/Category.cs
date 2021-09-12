@@ -1,8 +1,10 @@
-﻿namespace Entity.Concrete
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace Entity.Concrete
 {
     public class Category
     {
-        public int CategoryId { get; set; }
+        [Key] public int CategoryId { get; set; }
 
         public string CategoryName { get; set; }
 
