@@ -7,7 +7,6 @@ namespace DataAccess.Concrete
     {
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            // optionsBuilder.UseNpgsql("server=postgres;database=CoreBlogDb;integrated security=true");
             optionsBuilder.UseNpgsql("Host=localhost;Database=CoreBlogDb;Username=postgres;Password=torukobyte123");
         }
 
