@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 namespace Entity.Concrete
@@ -18,5 +19,11 @@ namespace Entity.Concrete
         public DateTime BlogCreateDate { get; set; }
 
         public bool BlogStatus { get; set; }
+
+        public int CategoryId { get; set; }
+
+        public Category Category { get; set; }
+
+        public List<Comment> Comments { get; set; }
     }
 }
