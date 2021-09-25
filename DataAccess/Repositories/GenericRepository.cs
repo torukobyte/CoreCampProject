@@ -1,5 +1,7 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using DataAccess.Abstract;
 using DataAccess.Concrete;
 
@@ -38,6 +40,12 @@ namespace DataAccess.Repositories
         {
             using var context = new Context();
             return context.Set<T>().Find(id);
+        }
+
+        public List<T> GetListAll(Expression<Func<T, bool>> filter)
+        {
+            using var context = new Context();
+            return context.Set<T>().Where(filter).ToList();
         }
     }
 }
