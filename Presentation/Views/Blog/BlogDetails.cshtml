@@ -5,169 +5,154 @@
     Layout = "UserLayout";
 }
 <section class="banner-bottom">
-<div class="container">
-    <div class="row">
-        <div class="col-lg-8 left-blog-info-w3layouts-agileits text-left">
-            @foreach (var item in Model)
-            {
-                <div class="blog-grid-top">
-                    <div class="b-grid-top">
-                        <div class="blog_info_left_grid">
-                            <a href="~/web/single.html">
-                                <img src="@item.BlogImage" class="img-fluid" alt="">
-                            </a>
-                        </div>
-                        <div class="blog-info-middle">
-                            <ul>
-                                <li>
-                                    <a href="#">
-                                        <i class="far fa-calendar-alt"></i> @item.BlogCreateDate.ToString("dd MMM yyyy")
-                                    </a>
-                                </li>
-                                <li class="mx-2">
-                                    <a href="#">
-                                        <i class="far fa-thumbs-up"></i> 201 Likes
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <i class="far fa-comment"></i> 15 Comments
-                                    </a>
-                                </li>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 left-blog-info-w3layouts-agileits text-left">
+                @foreach (var item in Model)
+                {
+                    <div class="blog-grid-top">
+                        <div class="b-grid-top">
+                            <div class="blog_info_left_grid">
+                                <a href="~/web/single.html">
+                                    <img src="@item.BlogImage" class="img-fluid" alt="">
+                                </a>
+                            </div>
+                            <div class="blog-info-middle">
+                                <ul>
+                                    <li>
+                                        <a href="#">
+                                            <i class="far fa-calendar-alt"></i> @item.BlogCreateDate.ToString("dd MMM yyyy")
+                                        </a>
+                                    </li>
+                                    <li class="mx-2">
+                                        <a href="#">
+                                            <i class="far fa-thumbs-up"></i> 201 Likes
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <i class="far fa-comment"></i> 15 Comments
+                                        </a>
+                                    </li>
 
-                            </ul>
-                        </div>
-                    </div>
-
-                    <h3>
-                        @item.BlogTitle
-                    </h3>
-                    <p class="text-dark">
-                        @item.BlogContent
-                    </p>
-                </div>
-            }
-
-            @* ReSharper disable once Mvc.PartialViewNotResolved *@
-            @await Html.PartialAsync("~/Views/Comment/CommentsInBlog.cshtml")
-            
-            @await Html.PartialAsync("~/Views/Comment/AddComment.cshtml")
-        </div>
-        <aside class="col-lg-4 agileits-w3ls-right-blog-con text-right">
-            <div class="right-blog-info text-left">
-                <div class="tech-btm">
-                    <img src="~/web/images/banner1.jpg" class="img-fluid" alt="">
-                </div>
-                <div class="tech-btm">
-                    <h4>Sign up to our newsletter</h4>
-                    <p>Pellentesque dui, non felis. Maecenas male </p>
-                    <form action="#" method="post">
-                        <input type="email" placeholder="Email" required="">
-                        <input type="submit" value="Subscribe">
-                    </form>
-
-                </div>
-                <div class="tech-btm">
-                    <h4>Categories</h4>
-                    <ul class="list-group single">
-                        <li class="list-group-item d-flex justify-content-between align-items-center">
-                            Cras justo odio
-                            <span class="badge badge-primary badge-pill">14</span>
-                        </li>
-                        <li class="list-group-item d-flex justify-content-between align-items-center">
-                            Dapibus ac facilisis in
-                            <span class="badge badge-primary badge-pill">2</span>
-                        </li>
-                        <li class="list-group-item d-flex justify-content-between align-items-center">
-                            Morbi leo risus
-                            <span class="badge badge-primary badge-pill">1</span>
-                        </li>
-                    </ul>
-                </div>
-                <div class="tech-btm">
-                    <h4>Top stories of the week</h4>
-
-                    <div class="blog-grids row mb-3">
-                        <div class="col-md-5 blog-grid-left">
-                            <a href="~/web/single.html">
-                                <img src="~/web/images/1.jpg" class="img-fluid" alt="">
-                            </a>
-                        </div>
-                        <div class="col-md-7 blog-grid-right">
-                            <h5>
-                                <a href="~/web/single.html">Pellentesque dui, non felis. Maecenas male non felis </a>
-                            </h5>
-                            <div class="sub-meta">
-                                <span>
-                                    <i class="far fa-clock"></i> 20 Jan, 2018
-                                </span>
+                                </ul>
                             </div>
                         </div>
+
+                        <h3>
+                            @item.BlogTitle
+                        </h3>
+                        <p class="text-dark">
+                            @item.BlogContent
+                        </p>
                     </div>
-                    <div class="blog-grids row mb-3">
-                        <div class="col-md-5 blog-grid-left">
-                            <a href="~/web/single.html">
-                                <img src="~/web/images/6.jpg" class="img-fluid" alt="">
-                            </a>
-                        </div>
-                        <div class="col-md-7 blog-grid-right">
-                            <h5>
-                                <a href="~/web/single.html">Pellentesque dui, non felis. Maecenas male non felis </a>
-                            </h5>
-                            <div class="sub-meta">
-                                <span>
-                                    <i class="far fa-clock"></i> 20 Feb, 2018
-                                </span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="single-gd my-5 tech-btm">
-                    <h4>Our Progress</h4>
-                    <div class="progress">
-                        <div class="progress-bar progress-bar-striped" role="progressbar" style="width: 10%" aria-valuenow="10" aria-valuemin="0"
-                             aria-valuemax="100">
-                        </div>
-                    </div>
-                    <div class="progress">
-                        <div class="progress-bar progress-bar-striped bg-success" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0"
-                             aria-valuemax="100">
-                        </div>
-                    </div>
-                    <div class="progress">
-                        <div class="progress-bar progress-bar-striped bg-info" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0"
-                             aria-valuemax="100">
-                        </div>
-                    </div>
-                    <div class="progress">
-                        <div class="progress-bar progress-bar-striped bg-warning" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0"
-                             aria-valuemax="100">
-                        </div>
-                    </div>
-                    <div class="progress">
-                        <div class="progress-bar progress-bar-striped bg-danger" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0"
-                             aria-valuemax="100">
-                        </div>
-                    </div>
-                </div>
-                <div class="single-gd tech-btm">
-                    <h4>Recent Post</h4>
-                    <div class="blog-grids">
-                        <div class="blog-grid-left">
-                            <a href="~/web/single.html">
-                                <img src="~/web/images/b1.jpg" class="img-fluid" alt="">
-                            </a>
-                        </div>
-                        <div class="blog-grid-right">
-                            <h5>
-                                <a href="~/web/single.html">Pellentesque dui, non felis. Maecenas male</a>
-                            </h5>
-                        </div>
-                        <div class="clearfix"> </div>
-                    </div>
-                </div>
+                }
+
+                @await Component.InvokeAsync("CommentListByBlog", new { id = ViewBag.id })
+                @* ReSharper disable once Mvc.PartialViewNotResolved *@
+                @* @await Html.PartialAsync("~/Views/Comment/CommentsInBlog.cshtml") *@
+
+                @await Html.PartialAsync("~/Views/Comment/AddComment.cshtml")
             </div>
-        </aside>
+            <aside class="col-lg-4 agileits-w3ls-right-blog-con text-right">
+                <div class="right-blog-info text-left">
+                    <div class="tech-btm">
+                        <img src="~/web/images/banner1.jpg" class="img-fluid" alt="">
+                    </div>
+                    <div class="tech-btm">
+                        <h4>Sign up to our newsletter</h4>
+                        <p>Pellentesque dui, non felis. Maecenas male </p>
+                        <form action="#" method="post">
+                            <input type="email" placeholder="Email" required="">
+                            <input type="submit" value="Subscribe">
+                        </form>
+
+                    </div>
+                    @await Component.InvokeAsync("CategoryList")
+                    <div class="tech-btm">
+                        <h4>Yazarın diğer yazıları</h4>
+
+                        <div class="blog-grids row mb-3">
+                            <div class="col-md-5 blog-grid-left">
+                                <a href="~/web/single.html">
+                                    <img src="~/web/images/1.jpg" class="img-fluid" alt="">
+                                </a>
+                            </div>
+                            <div class="col-md-7 blog-grid-right">
+                                <h5>
+                                    <a href="~/web/single.html">Pellentesque dui, non felis. Maecenas male non felis </a>
+                                </h5>
+                                <div class="sub-meta">
+                                    <span>
+                                        <i class="far fa-clock"></i> 20 Jan, 2018
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="blog-grids row mb-3">
+                            <div class="col-md-5 blog-grid-left">
+                                <a href="~/web/single.html">
+                                    <img src="~/web/images/6.jpg" class="img-fluid" alt="">
+                                </a>
+                            </div>
+                            <div class="col-md-7 blog-grid-right">
+                                <h5>
+                                    <a href="~/web/single.html">Pellentesque dui, non felis. Maecenas male non felis </a>
+                                </h5>
+                                <div class="sub-meta">
+                                    <span>
+                                        <i class="far fa-clock"></i> 20 Feb, 2018
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="single-gd my-5 tech-btm">
+                        <h4>Our Progress</h4>
+                        <div class="progress">
+                            <div class="progress-bar progress-bar-striped" role="progressbar" style="width: 10%" aria-valuenow="10" aria-valuemin="0"
+                                 aria-valuemax="100">
+                            </div>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar progress-bar-striped bg-success" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0"
+                                 aria-valuemax="100">
+                            </div>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar progress-bar-striped bg-info" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0"
+                                 aria-valuemax="100">
+                            </div>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar progress-bar-striped bg-warning" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0"
+                                 aria-valuemax="100">
+                            </div>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar progress-bar-striped bg-danger" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0"
+                                 aria-valuemax="100">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="single-gd tech-btm">
+                        <h4>Son Eklenen Post</h4>
+                        <div class="blog-grids">
+                            <div class="blog-grid-left">
+                                <a href="~/web/single.html">
+                                    <img src="~/web/images/b1.jpg" class="img-fluid" alt="">
+                                </a>
+                            </div>
+                            <div class="blog-grid-right">
+                                <h5>
+                                    <a href="~/web/single.html">Pellentesque dui, non felis. Maecenas male</a>
+                                </h5>
+                            </div>
+                            <div class="clearfix"> </div>
+                        </div>
+                    </div>
+                </div>
+            </aside>
+        </div>
     </div>
-</div>
 </section>
