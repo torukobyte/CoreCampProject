@@ -4,8 +4,7 @@ using Entity.Concrete;
 
 namespace DataAccess.Concrete.EntityFramework
 {
-    public class EfAuthorRepository : GenericRepository<Author>,IAuthorDal
+    public class EfAuthorRepository : GenericRepository<Author>, IAuthorDal
     {
-        
     }
 }

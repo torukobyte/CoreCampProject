@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using Business.Abstract;
 using DataAccess.Abstract;
 using Entity.Concrete;
@@ -7,7 +8,7 @@ namespace Business.Concrete
 {
     public class CommentManager : ICommentService
     {
-        private ICommentDal _commentDal;
+        private readonly ICommentDal _commentDal;
 
         public CommentManager(ICommentDal commentDal)
         {
@@ -16,7 +17,7 @@ namespace Business.Concrete
 
         public void AddComment(Comment comment)
         {
-            throw new System.NotImplementedException();
+            throw new NotImplementedException();
         }
 
         public List<Comment> GetListAll(int id)

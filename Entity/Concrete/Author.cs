@@ -1,4 +1,6 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Entity.Concrete
 {
@@ -17,5 +19,11 @@ namespace Entity.Concrete
         public string AuthorPassword { get; set; }
 
         public bool AuthorStatus { get; set; }
+
+        public List<Blog> Blogs { get; set; }
+
+        [NotMapped]
+        // [Compare("AuthorPassword",ErrorMessage = "Girilen şifreler bir birleriyle uyuşmuyor!")]
+        public string AuthorConfirmPassword { get; set; }
     }
 }

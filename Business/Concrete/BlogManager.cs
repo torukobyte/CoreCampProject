@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using Business.Abstract;
 using DataAccess.Abstract;
 using Entity.Concrete;
@@ -7,7 +8,7 @@ namespace Business.Concrete
 {
     public class BlogManager : IBlogService
     {
-        private IBlogDal _blogDal;
+        private readonly IBlogDal _blogDal;
 
         public BlogManager(IBlogDal blogDal)
         {
@@ -16,23 +17,22 @@ namespace Business.Concrete
 
         public void AddBlog(Blog blog)
         {
-            throw new System.NotImplementedException();
+            throw new NotImplementedException();
         }
 
         public void DeleteBlog(Blog blog)
         {
-            throw new System.NotImplementedException();
+            throw new NotImplementedException();
         }
 
         public void UpdateBlog(Blog blog)
         {
-            throw new System.NotImplementedException();
+            throw new NotImplementedException();
         }
 
         public List<Blog> GetListAll()
         {
             return _blogDal.GetListAll();
-
         }
 
         public Blog GetById(int id)
@@ -40,14 +40,19 @@ namespace Business.Concrete
             return _blogDal.GetById(id);
         }
 
-        public List<Blog> GetBlogById(int id)
-        {
-            return _blogDal.GetListAll(x => x.BlogId == id);
-        }
-
         public List<Blog> GetBlogListWithCategory()
         {
             return _blogDal.GetListWithCategory();
+        }
+
+        public List<Blog> GetBlogByAuthor(int id)
+        {
+            return _blogDal.GetListAll(x => x.AuthorId == id);
+        }
+
+        public List<Blog> GetBlogById(int id)
+        {
+            return _blogDal.GetListAll(x => x.BlogId == id);
         }
     }
 }

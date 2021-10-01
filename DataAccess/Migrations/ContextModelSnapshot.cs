@@ -86,6 +86,9 @@ namespace DataAccess.Migrations
                         .HasColumnType("integer")
                         .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);
 
+                    b.Property<int>("AuthorId")
+                        .HasColumnType("integer");
+
                     b.Property<string>("BlogContent")
                         .HasColumnType("text");
 
@@ -108,6 +111,8 @@ namespace DataAccess.Migrations
                         .HasColumnType("integer");
 
                     b.HasKey("BlogId");
+
+                    b.HasIndex("AuthorId");
 
                     b.HasIndex("CategoryId");
 
@@ -199,11 +204,19 @@ namespace DataAccess.Migrations
 
             modelBuilder.Entity("Entity.Concrete.Blog", b =>
                 {
+                    b.HasOne("Entity.Concrete.Author", "Author")
+                        .WithMany("Blogs")
+                        .HasForeignKey("AuthorId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.HasOne("Entity.Concrete.Category", "Category")
                         .WithMany("Blogs")
                         .HasForeignKey("CategoryId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+
+                    b.Navigation("Author");
 
                     b.Navigation("Category");
                 });
@@ -217,6 +230,11 @@ namespace DataAccess.Migrations
                         .IsRequired();
 
                     b.Navigation("Blog");
+                });
+
+            modelBuilder.Entity("Entity.Concrete.Author", b =>
+                {
+                    b.Navigation("Blogs");
                 });
 
             modelBuilder.Entity("Entity.Concrete.Blog", b =>

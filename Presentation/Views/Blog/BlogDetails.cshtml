@@ -1,4 +1,4 @@
-﻿@model System.Collections.Generic.List<Entity.Concrete.Blog>
+﻿@model List<Entity.Concrete.Blog>
 
 @{
     ViewBag.Title = "Blog Details";
@@ -48,7 +48,7 @@
                     </div>
                 }
 
-                @await Component.InvokeAsync("CommentListByBlog", new { id = ViewBag.id })
+                @await Component.InvokeAsync("CommentListByBlog", new { ViewBag.id })
                 @* ReSharper disable once Mvc.PartialViewNotResolved *@
                 @* @await Html.PartialAsync("~/Views/Comment/CommentsInBlog.cshtml") *@
 
@@ -69,44 +69,9 @@
 
                     </div>
                     @await Component.InvokeAsync("CategoryList")
-                    <div class="tech-btm">
-                        <h4>Yazarın diğer yazıları</h4>
 
-                        <div class="blog-grids row mb-3">
-                            <div class="col-md-5 blog-grid-left">
-                                <a href="~/web/single.html">
-                                    <img src="~/web/images/1.jpg" class="img-fluid" alt="">
-                                </a>
-                            </div>
-                            <div class="col-md-7 blog-grid-right">
-                                <h5>
-                                    <a href="~/web/single.html">Pellentesque dui, non felis. Maecenas male non felis </a>
-                                </h5>
-                                <div class="sub-meta">
-                                    <span>
-                                        <i class="far fa-clock"></i> 20 Jan, 2018
-                                    </span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="blog-grids row mb-3">
-                            <div class="col-md-5 blog-grid-left">
-                                <a href="~/web/single.html">
-                                    <img src="~/web/images/6.jpg" class="img-fluid" alt="">
-                                </a>
-                            </div>
-                            <div class="col-md-7 blog-grid-right">
-                                <h5>
-                                    <a href="~/web/single.html">Pellentesque dui, non felis. Maecenas male non felis </a>
-                                </h5>
-                                <div class="sub-meta">
-                                    <span>
-                                        <i class="far fa-clock"></i> 20 Feb, 2018
-                                    </span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    @await Component.InvokeAsync("AuthorRecentBlog")
+
                     <div class="single-gd my-5 tech-btm">
                         <h4>Our Progress</h4>
                         <div class="progress">

@@ -6,8 +6,8 @@ namespace Presentation.Controllers
 {
     public class CategoryController : Controller
     {
-        private CategoryManager _categoryManager = new CategoryManager(new EfCategoryRepository());
-        
+        private readonly CategoryManager _categoryManager = new(new EfCategoryRepository());
+
         // GET
         public IActionResult Index()
         {

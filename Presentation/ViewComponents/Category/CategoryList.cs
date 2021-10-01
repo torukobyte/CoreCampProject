@@ -6,7 +6,7 @@ namespace Presentation.ViewComponents.Category
 {
     public class CategoryList : ViewComponent
     {
-        private CategoryManager _categoryManager = new CategoryManager(new EfCategoryRepository());
+        private readonly CategoryManager _categoryManager = new(new EfCategoryRepository());
 
         public IViewComponentResult Invoke()
         {

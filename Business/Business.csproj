@@ -5,25 +5,23 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\DataAccess\DataAccess.csproj" />
-      <ProjectReference Include="..\Entity\Entity.csproj" />
+        <ProjectReference Include="..\DataAccess\DataAccess.csproj"/>
+        <ProjectReference Include="..\Entity\Entity.csproj"/>
     </ItemGroup>
 
     <ItemGroup>
-      <PackageReference Include="Microsoft.EntityFrameworkCore" Version="5.0.9" />
-      <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="5.0.9">
-        <PrivateAssets>all</PrivateAssets>
-        <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-      </PackageReference>
-      <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="5.0.9">
-        <PrivateAssets>all</PrivateAssets>
-        <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-      </PackageReference>
-      <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="5.0.7" />
-    </ItemGroup>
-
-    <ItemGroup>
-      <Folder Include="ValidationRules" />
+        <PackageReference Include="FluentValidation" Version="10.3.3"/>
+        <PackageReference Include="FluentValidation.AspNetCore" Version="10.3.3"/>
+        <PackageReference Include="Microsoft.EntityFrameworkCore" Version="5.0.9"/>
+        <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="5.0.9">
+            <PrivateAssets>all</PrivateAssets>
+            <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+        </PackageReference>
+        <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="5.0.9">
+            <PrivateAssets>all</PrivateAssets>
+            <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+        </PackageReference>
+        <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="5.0.7"/>
     </ItemGroup>
 
 </Project>

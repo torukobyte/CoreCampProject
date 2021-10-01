@@ -10,18 +10,18 @@ namespace Presentation.ViewComponents
         {
             var values = new List<UserComment>
             {
-                new UserComment()
+                new()
                 {
                     ID = 1,
                     username = "Burak"
                 },
-                new UserComment()
+                new()
                 {
                     ID = 2,
                     username = "torukobyte"
                 }
             };
-            
+
             return View(values);
         }
     }

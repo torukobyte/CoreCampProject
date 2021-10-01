@@ -5,11 +5,6 @@ namespace DataAccess.Concrete
 {
     public class Context : DbContext
     {
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        {
-            optionsBuilder.UseNpgsql("Host=localhost;Database=CoreBlogDb;Username=postgres;Password=torukobyte123");
-        }
-
         public DbSet<About> Abouts { get; set; }
 
         public DbSet<Blog> Blogs { get; set; }
@@ -21,5 +16,10 @@ namespace DataAccess.Concrete
         public DbSet<Contact> Contacts { get; set; }
 
         public DbSet<Author> Authors { get; set; }
+
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            optionsBuilder.UseNpgsql("Host=localhost;Database=CoreBlogDb;Username=postgres;Password=torukobyte123");
+        }
     }
 }

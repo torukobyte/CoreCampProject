@@ -6,8 +6,8 @@ namespace Presentation.Controllers
 {
     public class BlogController : Controller
     {
-        private BlogManager _blogManager = new BlogManager(new EfBlogRepository());
-        
+        private readonly BlogManager _blogManager = new(new EfBlogRepository());
+
         public IActionResult Index()
         {
             var values = _blogManager.GetBlogListWithCategory();

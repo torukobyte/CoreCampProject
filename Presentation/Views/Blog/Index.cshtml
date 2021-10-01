@@ -1,4 +1,4 @@
-﻿@model System.Collections.Generic.List<Entity.Concrete.Blog>
+﻿@model List<Entity.Concrete.Blog>
 
 @{
     ViewBag.Title = "title";
@@ -44,7 +44,8 @@
                                     {
                                         @item.BlogContent.Substring(0, item.BlogContent.Substring(0, 130).LastIndexOf(" "))
                                     }
-                                    ..</p>
+                                    ..
+                                </p>
                                 <a href="Blog/BlogDetails/@item.BlogId" class="btn btn-primary read-m mb-4">Devamını Oku</a>
                             </div>
                         </div>
