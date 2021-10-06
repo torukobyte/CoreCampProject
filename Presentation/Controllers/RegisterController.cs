@@ -1,4 +1,5 @@
-﻿using Business.Concrete;
+﻿using System.Collections.Generic;
+using Business.Concrete;
 using Business.ValidationRules;
 using DataAccess.Concrete.EntityFramework;
 using Entity.Concrete;

@@ -1,5 +1,7 @@
-﻿using Business.Concrete;
+﻿using System;
+using Business.Concrete;
 using DataAccess.Concrete.EntityFramework;
+using Entity.Concrete;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Presentation.Controllers
@@ -20,9 +22,20 @@ namespace Presentation.Controllers
             return PartialView(values);
         }
 
+        [HttpGet]
         public PartialViewResult AddComment()
         {
             return PartialView();
+        }
+        
+        [HttpPost]
+        public IActionResult AddComment(Comment comment)
+        {
+            comment.CommentDate = DateTime.Now;
+            comment.CommentStatus = true;
+            comment.BlogId = 15;
+            _commentManager.AddComment(comment);
+            return RedirectToAction("Index","Blog");
         }
     }
 }

@@ -17,6 +17,8 @@ namespace DataAccess.Concrete
 
         public DbSet<Author> Authors { get; set; }
 
+        public DbSet<NewsLetter> NewsLetters { get; set; }
+
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseNpgsql("Host=localhost;Database=CoreBlogDb;Username=postgres;Password=torukobyte123");

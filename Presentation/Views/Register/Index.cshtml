@@ -13,13 +13,13 @@
                 {
                     <div class="form-row">
                         <div class="col-md-6 mb-3">
-                            <label for="validationCustom01">Adınız Soyadınız</label>
+                            <label>Adınız Soyadınız</label>
                             @Html.TextBoxFor(x => x.AuthorName, new { @class = "form-control" })
                             @Html.ValidationMessageFor(x => x.AuthorName, "", new { @class = "text-danger" })
                             @* <input name="AuthorName" type="text" class="form-control" id="validationDefault01" placeholder="" required=""> *@
                         </div>
                         <div class="col-md-6 mb-3">
-                            <label for="validationCustom02">E-Posta Adresi</label>
+                            <label>E-Posta Adresi</label>
                             @Html.TextBoxFor(x => x.AuthorMail, new { @class = "form-control" })
                             @Html.ValidationMessageFor(x => x.AuthorMail, "", new { @class = "text-danger" })
                             @* <input name="AuthorMail" type="text" class="form-control" id="validationDefault02" placeholder="" required=""> *@
@@ -27,19 +27,19 @@
                     </div>
                     <div class="form-row">
                         <div class="form-group col-md-6">
-                            <label for="exampleInputPassword1 mb-2">Şifre</label>
+                            <label>Şifre</label>
                             @Html.PasswordFor(x => x.AuthorPassword, new { @class = "form-control" })
                             @Html.ValidationMessageFor(x => x.AuthorPassword, "", new { @class = "text-danger" })
                             @* <input name="AuthorPassword" type="password" class="form-control" id="password1" placeholder="" required=""> *@
                         </div>
                         <div class="form-group col-md-6">
-                            <label for="exampleInputPassword1 mb-2">Şifre Onay</label>
+                            <label>Şifre Onay</label>
                             @Html.PasswordFor(x => x.AuthorConfirmPassword, new { @class = "form-control" })
                             @Html.ValidationMessageFor(x => x.AuthorConfirmPassword, "", new { @class = "text-danger" })
                             @* <span asp-validation-for="AuthorConfirmPassword" class="text-danger"></span> *@
                         </div>
                         <div class="form-group col-md-6">
-                            <label for="exampleInputPassword2 mb-2">Görsel Dosya Yolu</label>
+                            <label>Görsel Dosya Yolu</label>
                             @Html.TextBoxFor(x => x.AuthorImage, new { @class = "form-control" })
                             @Html.ValidationMessageFor(x => x.AuthorImage, "", new { @class = "text-danger" })
                             @* <input name="AuthorImage" type="text" class="form-control" id="password2" placeholder="" required=""> *@

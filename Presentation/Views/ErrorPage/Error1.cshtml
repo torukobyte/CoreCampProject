@@ -1,0 +1,52 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+	<title>Oops! - 404</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta charset="UTF-8" />
+	<meta name="keywords"
+		content="Bicycle Error Page Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+	<script>
+		addEventListener("load", function () {
+			setTimeout(hideURLbar, 0);
+		}, false);
+
+		function hideURLbar() {
+			window.scrollTo(0, 1);
+		}
+	</script>
+	<link rel="stylesheet" href="~/weberror/css/style.css" type="text/css" media="all" />
+	<link href="~/weberror/css/font-awesome.css" rel="stylesheet">
+</head>
+
+<body>
+	<section class="w3l-error-61-404">
+		<div class="error-61-mian">
+			<div class="wrapper">
+				<div class="errors-16-top">
+					<div class="errors-16-info">
+						<h3>404 </h3>
+
+						<p>Oops! Sayfa Bulunamadı</p>
+						<a style="text-decoration: none;color: #000000;" href="@Url.Action("Index","Blog")" class="d-flex error-page-form">
+							<button type="submit"><span class="fa fa-home" aria-hidden="true"> Ana Sayfa</span></button>
+						</a>
+					</div>
+
+				</div>
+				<div class="copyright-footer">
+					<div class="copy-right">
+						<p>©@DateTime.Now.Year Asp.Net Core 5.0 Proje Kampı | torukobyte
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+</body>
+
+</html>
