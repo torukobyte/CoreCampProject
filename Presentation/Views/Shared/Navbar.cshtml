@@ -1,19 +1,19 @@
 ﻿<div class="top-bar_sub_w3layouts container-fluid">
     <div class="row">
         <div class="col-md-4 logo text-left">
-            <a class="navbar-brand" href="~/web/index.html">
+            <a class="navbar-brand" href="@Url.Action("Index","Author")">
                 <i class="fab fa-linode"></i> torukobyte
             </a>
         </div>
         <div class="col-md-4 top-forms text-center mt-lg-3 mt-md-1 mt-0">
             <span>Hoşgeldin</span>
             <span class="mx-lg-4 mx-md-2  mx-1">
-                <a href="/Login/Index">
+                <a href="@Url.Action("Index","Login")">
                     <i class="fas fa-lock"></i> Giriş Yap
                 </a>
             </span>
             <span>
-                <a href="/Register/Index">
+                <a href="@Url.Action("Index","Register")">
                     <i class="far fa-user"></i> Kayıt Ol
                 </a>
             </span>

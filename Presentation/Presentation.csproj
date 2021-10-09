@@ -29,4 +29,8 @@
         <_ContentIncludedByDefault Remove="Pages\Category\Index.cshtml" />
     </ItemGroup>
 
+    <ItemGroup>
+      <Folder Include="Pages" />
+    </ItemGroup>
+
 </Project>

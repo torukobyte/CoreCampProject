@@ -9,15 +9,15 @@
         <h3 class="tittle">Giriş Yap</h3>
         <div class="row inner-sec">
             <div class="login p-5 bg-light mx-auto mw-100">
-                <form action="#" method="post">
+                <form method="post">
                     <div class="form-group">
                         <label for="exampleInputEmail1 mb-2">E-Posta adresiniz</label>
-                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="" required="">
+                        <input name="AuthorMail" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="" required="">
                         @* <small id="emailHelp" class="form-text text-muted">Mail adresiniz hiç kimse ile paylaşılmayacaktır.</small> *@
                     </div>
                     <div class="form-group">
                         <label for="exampleInputPassword1 mb-2">Şifre</label>
-                        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="" required="">
+                        <input name="AuthorPassword" type="password" class="form-control" id="exampleInputPassword1" placeholder="" required="">
                     </div>
                     <div class="form-check mb-2">
                         <input type="checkbox" class="form-check-input" id="exampleCheck1">
@@ -25,7 +25,7 @@
                     </div>
                     <button type="submit" class="btn btn-primary submit mb-4">Giriş Yap</button>
                     <p>
-                        <a href="/Register/Index"> Hesabınız yok mu?</a>
+                        <a href="@Url.Action("Index","Register")"> Hesabınız yok mu?</a>
                     </p>
                 </form>
             </div>
