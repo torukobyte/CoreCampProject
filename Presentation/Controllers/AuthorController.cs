@@ -5,9 +5,12 @@ namespace Presentation.Controllers
 {
     public class AuthorController : Controller
     {
-        [Authorize]
-        [AllowAnonymous]
         public IActionResult Index()
+        {
+            return View();
+        }
+
+        public IActionResult Test()
         {
             return View();
         }

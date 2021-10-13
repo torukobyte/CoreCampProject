@@ -1,0 +1,33 @@
+﻿@using Entity.Concrete
+@model List<Blog>
+
+<div class="tech-btm">
+    <h3>Son Gönderiler</h3>
+    <div class="blog-grids row mb-3">
+        @foreach (var item in Model)
+        {
+            <div class="col-md-4 blog-grid-left mb-4">
+                <a href="/Blog/BlogDetails/@item.BlogId">
+                    <img src="/@item.BlogThumbnailImage" class="card-img-top img-fluid" alt="">
+                </a>
+            </div>
+            <div class="col-md-7 blog-grid-right mt-2">
+                <a href="/Blog/BlogDetails/@item.BlogId">
+                    <h5 class="text-light mb-2">@item.BlogTitle</h5>
+                </a>
+                <p class="text-secondary">
+                    @if (item.BlogContent != null)
+                    {
+                        @item.BlogContent.Substring(0, item.BlogContent.Substring(0, 70).LastIndexOf(" "))
+                    }
+                    ..
+                </p>
+                <div class="sub-meta mt-1">
+                    <span>
+                        <i class="far fa-clock"></i> @item.BlogCreateDate.ToString("dd MMM yyyy")
+                    </span>
+                </div>
+            </div>
+        }
+    </div>
+</div>

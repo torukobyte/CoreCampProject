@@ -2,67 +2,13 @@
     <div class="row">
         <div class="col-lg-6 footer-grid-agileits-w3ls text-left">
             <h3>Hakkımızda</h3>
-            <p class="w-75">Blog, genellikle güncelden eskiye doğru sıralanmış yazı ve yorumların yayınlandığı, web tabanlı bir yayını belirtir. Çoğunlukla her gönderinin sonunda yazarın adı ve gönderi zamanı belirtilir. Yayıncının seçimine göre okuyucular yazılara yorum yapılabilir. Yorumlar, blog kültürünün çok önemli bir dinamiğidir; bu sayede yazar ve okuyucular arasında iletişim sağlanır. </p>
+            <p class="w-75 text-secondary">Blog, genellikle güncelden eskiye doğru sıralanmış yazı ve yorumların yayınlandığı, web tabanlı bir yayını belirtir. Çoğunlukla her gönderinin sonunda yazarın adı ve gönderi zamanı belirtilir. Yayıncının seçimine göre okuyucular yazılara yorum yapılabilir. Yorumlar, blog kültürünün çok önemli bir dinamiğidir; bu sayede yazar ve okuyucular arasında iletişim sağlanır. </p>
             <div class="read">
                 <a href="@Url.Action("Index", "About")" class="btn btn-primary read-m">Devamını Oku</a>
             </div>
         </div>
         <div class="col-lg-6 footer-grid-agileits-w3ls text-left">
-            <div class="tech-btm">
-                <h3>Son Gönderiler</h3>
-                <div class="blog-grids row mb-3">
-                    <div class="col-md-4 blog-grid-left">
-                        <a href="~/web/single.html">
-                            <img src="~/web/images/4.jpg" class="card-img-top img-fluid" alt="">
-                        </a>
-                    </div>
-                    <div class="col-md-7 blog-grid-right">
-                        <h5>
-                            <a href="~/web/single.html">Pellentesque dui, non felis. Maecenas male non felis </a>
-                        </h5>
-                        <div class="sub-meta">
-                            <span>
-                                <i class="far fa-clock"></i> 20 Jan, 2018
-                            </span>
-                        </div>
-                    </div>
-                </div>
-                <div class="blog-grids row mb-3">
-                    <div class="col-md-4 blog-grid-left">
-                        <a href="~/web/single.html">
-                            <img src="~/web/images/5.jpg" class="card-img-top img-fluid" alt="">
-                        </a>
-                    </div>
-                    <div class="col-md-7 blog-grid-right">
-
-                        <h5>
-                            <a href="~/web/single.html">Pellentesque dui, non felis. Maecenas male non felis</a>
-                        </h5>
-                        <div class="sub-meta">
-                            <span>
-                                <i class="far fa-clock"></i> 20 Jan, 2018
-                            </span>
-                        </div>
-                    </div>
-                </div>
-                <div class="blog-grids row mb-3">
-                    <div class="col-md-4 blog-grid-left">
-                        <a href="~/web/single.html">
-                            <img src="~/web/images/6.jpg" class="card-img-top img-fluid" alt="">
-                        </a>
-                    </div>
-                    <div class="col-md-7 blog-grid-right">
-                        <h5>
-                            <a href="~/web/single.html">Pellentesque dui, non felis. Maecenas male non felis </a>
-                        </h5>
-                        <div class="sub-meta">
-                            <span>
-                                <i class="far fa-clock"></i> 20 Jan, 2018
-                            </span>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            @await Component.InvokeAsync("BlogLast3Post");
         </div>
 
     </div>

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using Business.Abstract;
 using DataAccess.Abstract;
 using Entity.Concrete;
@@ -33,6 +34,11 @@ namespace Business.Concrete
         public List<Blog> GetListAll()
         {
             return _blogDal.GetListAll();
+        }
+
+        public List<Blog> GetList3Blog()
+        {
+            return _blogDal.GetListAll().Take(3).ToList();
         }
 
         public Blog GetById(int id)
