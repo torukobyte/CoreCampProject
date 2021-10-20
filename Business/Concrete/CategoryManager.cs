@@ -14,22 +14,22 @@ namespace Business.Concrete
             _categoryDal = categoryDal;
         }
 
-        public void AddCategory(Category category)
+        public void Add(Category t)
         {
-            _categoryDal.Insert(category);
+            _categoryDal.Insert(t);
         }
 
-        public void DeleteCategory(Category category)
+        public void Delete(Category t)
         {
-            _categoryDal.Delete(category);
+            _categoryDal.Delete(t);
         }
 
-        public void UpdateCategory(Category category)
+        public void Update(Category t)
         {
-            _categoryDal.Update(category);
+            _categoryDal.Update(t);;
         }
 
-        public List<Category> GetListAll()
+        public List<Category> GetList()
         {
             return _categoryDal.GetListAll();
         }

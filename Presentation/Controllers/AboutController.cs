@@ -10,7 +10,7 @@ namespace Presentation.Controllers
         // GET
         public IActionResult Index()
         {
-            var values = _aboutManager.GetListAll();
+            var values = _aboutManager.GetList();
             return View(values);
         }
 

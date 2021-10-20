@@ -14,5 +14,17 @@ namespace Presentation.Controllers
         {
             return View();
         }
+
+        [AllowAnonymous]
+        public PartialViewResult AuthorSidebarPartial()
+        {
+            return PartialView();
+        }
+        
+        [AllowAnonymous]
+        public PartialViewResult AuthorFooterPartial()
+        {
+            return PartialView();
+        }
     }
 }

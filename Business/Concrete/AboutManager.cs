@@ -14,9 +14,29 @@ namespace Business.Concrete
             _aboutDal = aboutDal;
         }
 
-        public List<About> GetListAll()
+        public void Add(About t)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public void Delete(About t)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public void Update(About t)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public List<About> GetList()
         {
             return _aboutDal.GetListAll();
+        }
+
+        public About GetById(int id)
+        {
+            throw new System.NotImplementedException();
         }
     }
 }

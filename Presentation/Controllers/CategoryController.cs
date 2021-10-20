@@ -11,7 +11,7 @@ namespace Presentation.Controllers
         // GET
         public IActionResult Index()
         {
-            var values = _categoryManager.GetListAll();
+            var values = _categoryManager.GetList();
             return View(values);
         }
     }

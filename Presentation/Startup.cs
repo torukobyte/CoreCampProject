@@ -23,8 +23,6 @@ namespace Presentation
         {
             services.AddControllersWithViews();
 
-            services.AddSession();
-
             services.AddMvc(config =>
             {
                 var policy = new AuthorizationPolicyBuilder()
@@ -59,8 +57,6 @@ namespace Presentation
             app.UseStaticFiles();
 
             app.UseRouting();
-
-            app.UseSession();
 
             app.UseAuthorization();
             app.UseAuthentication();

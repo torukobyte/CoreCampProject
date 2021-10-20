@@ -10,7 +10,7 @@ namespace Presentation.ViewComponents.Category
 
         public IViewComponentResult Invoke()
         {
-            var values = _categoryManager.GetListAll();
+            var values = _categoryManager.GetList();
             return View(values);
         }
     }
