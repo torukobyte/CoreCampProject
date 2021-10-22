@@ -1,0 +1,31 @@
+﻿@model System.Collections.Generic.List<Entity.Concrete.Blog>
+
+@{
+    Layout = "AuthorLayout";
+}
+
+<h1>Yazarın Blogları</h1>
+<table class="table table-bordered">
+    <tr>
+        <th>Blog ID</th>
+        <th>Blog Başlığı</th>
+        <th>Oluşturulma Tarihi</th>
+        <th>Kategori</th>
+        <th>Durum</th>
+        <th></th>
+        <th></th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <th>@item.BlogId</th>
+            <td>@item.BlogTitle</td>
+            <td>@item.BlogCreateDate.ToString("dd MMM yyyy")</td>
+            <td>@item.Category.CategoryName</td>
+            <td>@(item.BlogStatus ? "Aktif" : "Pasif")</td>
+            <td><a href="#" class="btn btn-gradient-danger">Sil</a></td>
+            <td><a href="#" class="btn btn-gradient-info">Düzenle</a></td>
+        </tr>
+    }
+</table>
+<a href="@Url.Action("AddBlog")" class="btn btn-gradient-primary">Yeni Blog Oluştur</a>

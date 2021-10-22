@@ -14,5 +14,11 @@ namespace DataAccess.Concrete.EntityFramework
             using var ctx = new Context();
             return ctx.Blogs.Include(x => x.Category).ToList();
         }
+
+        public List<Blog> GetListWithCategoryByAuthor(int id)
+        {
+            using var ctx = new Context();
+            return ctx.Blogs.Include(x => x.Category).Where(x => x.AuthorId == id).ToList();
+        }
     }
 }

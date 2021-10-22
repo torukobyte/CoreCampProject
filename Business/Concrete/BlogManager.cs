@@ -18,12 +18,12 @@ namespace Business.Concrete
 
         public List<Blog> GetList3Blog()
         {
-            return _blogDal.GetListAll().Take(3).ToList();
+            return _blogDal.GetListAll().TakeLast(3).ToList();
         }
 
         public void Add(Blog t)
         {
-            throw new NotImplementedException();
+            _blogDal.Insert(t);
         }
 
         public void Delete(Blog t)
@@ -49,6 +49,11 @@ namespace Business.Concrete
         public List<Blog> GetBlogListWithCategory()
         {
             return _blogDal.GetListWithCategory();
+        }
+
+        public List<Blog> GetBlogListWithCategoryByAuthor(int id)
+        {
+            return _blogDal.GetListWithCategoryByAuthor(id);
         }
 
         public List<Blog> GetBlogByAuthor(int id)
