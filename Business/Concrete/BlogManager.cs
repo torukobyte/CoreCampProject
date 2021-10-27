@@ -18,7 +18,7 @@ namespace Business.Concrete
 
         public List<Blog> GetList3Blog()
         {
-            return _blogDal.GetListAll().TakeLast(3).ToList();
+            return _blogDal.GetListAll().Take(3).ToList();
         }
 
         public void Add(Blog t)
@@ -28,12 +28,12 @@ namespace Business.Concrete
 
         public void Delete(Blog t)
         {
-            throw new NotImplementedException();
+            _blogDal.Delete(t);
         }
 
         public void Update(Blog t)
         {
-            throw new NotImplementedException();
+            _blogDal.Update(t);
         }
 
         public List<Blog> GetList()

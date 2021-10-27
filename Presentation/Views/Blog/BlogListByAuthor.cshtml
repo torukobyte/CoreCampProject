@@ -4,6 +4,7 @@
     Layout = "AuthorLayout";
 }
 
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <h1>Yazarın Blogları</h1>
 <table class="table table-bordered">
     <tr>
@@ -23,9 +24,27 @@
             <td>@item.BlogCreateDate.ToString("dd MMM yyyy")</td>
             <td>@item.Category.CategoryName</td>
             <td>@(item.BlogStatus ? "Aktif" : "Pasif")</td>
-            <td><a href="#" class="btn btn-gradient-danger">Sil</a></td>
-            <td><a href="#" class="btn btn-gradient-info">Düzenle</a></td>
+            <td><a onclick="Delete(@item.BlogId)" class="btn btn-gradient-danger">Sil</a></td>
+            <td><a href="/Blog/EditBlog/@item.BlogId" class="btn btn-gradient-info">Düzenle</a></td>
         </tr>
     }
 </table>
 <a href="@Url.Action("AddBlog")" class="btn btn-gradient-primary">Yeni Blog Oluştur</a>
+<script>
+function Delete(id){
+   Swal.fire({
+     title: 'Silmek istediğinize Emin misiniz?',
+     text: "Bu işlemi geri alamazsınız!",
+     icon: 'warning',
+     showCancelButton: true,
+     confirmButtonColor: '#3085d6',
+     cancelButtonColor: '#d33',
+     confirmButtonText: 'Sil',
+     cancelButtonText:'Vazgeç',
+   }).then((result) => {
+     if (result.isConfirmed) {
+       window.location.href = '/Blog/DeleteBlog/'+id;
+     }
+   })
+}
+</script>
